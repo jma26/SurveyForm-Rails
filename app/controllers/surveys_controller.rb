@@ -6,7 +6,15 @@ class SurveysController < ApplicationController
     redirect_to '/result'
   end
   def result
-    @session = session[:survey]
+    if session[:counter].nil?
+      session[:counter] = 0
+      @counter = session[:counter]
+      @session = session[:survey]
+    else
+      session[:counter] += 1
+      @counter = session[:counter]
+      @session = session[:survey]
+    end
   end
   private
     def survey_params
