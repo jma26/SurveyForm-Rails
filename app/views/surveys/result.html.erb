@@ -1,2 +1,29 @@
-<h1>Surveys#result</h1>
-<p>Find me in app/views/surveys/result.html.erb</p>
+<html>
+<head>
+    <title> Survey Form </title>
+    <%= stylesheet_link_tag 'result' %>
+</head>
+<body>
+    <div class='container'>
+        <div>
+            <h1> Submitted Information </h1>
+            <div class='display_containers'>
+                <label> Name: </label>
+                <p> <%= @session["name"] %> </p>
+            </div>
+            <div class='display_containers'>
+                <label> Location: </label>
+                <p> <%= @session["location"] %> </p>
+            </div>
+            <div class='display_containers'>
+                <label> Language: </label>
+                <p> <%= @session["language"] %> </p>
+            </div>
+            <div class='display_containers'>
+                <label> Comment: </label>
+                <p> <%= @session["comment"] %> </p>
+            </div>
+            <p class='go_back'> <a href ="/index" data-method='get'> Go back </a></p>
+        </div>
+    </div>
+</body>

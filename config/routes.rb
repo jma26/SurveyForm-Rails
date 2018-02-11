@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'surveys#index'
+  get 'index' => 'surveys#index'
+  post 'survey' => 'surveys#post'
   get 'result' => 'surveys#result'
 
   # The priority is based upon order of creation: first created -> highest priority.
